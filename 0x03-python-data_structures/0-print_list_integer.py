@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 """ prints all integers of a list """
 
 
