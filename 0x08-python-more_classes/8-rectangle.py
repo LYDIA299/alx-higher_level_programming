@@ -71,7 +71,10 @@ class Rectangle:
         rectangle = ''
         for column in range(self.__height):
             for row in range(self.__width):
-                rectangle += print_symbol
+                try:
+                    rectangle += str(self.print_symbol)
+                except Exception:
+                    rectangle += type(self).print_symbol
             if column < self.__height - 1:
                 rectangle += "\n"
 
@@ -85,3 +88,15 @@ class Rectangle:
     def __del__(self):
         type(self).number_of_instances -= 1
         print('Bye rectangle...')
+
+    @staticmethod
+    def bigger_or_equal(rect_1, rect_2):
+        if not isinstance(rect_1, Rectangle):
+            raise TypeError('rect_1 must be an instance of Rectangle')
+        if not isinstance(rect_2, Rectangle):
+            raise TypeError('rect_2 must be an instance of Rectangle')
+
+        if rect_1.area() >= rect_2.area():
+            return rect_1
+        else:
+            return rect_2
