@@ -1,0 +1,35 @@
+The ``0-add_integer`` module
+============================
+
+using ``add_integer``
+----------------------
+
+This module adds and returns an integer of two arguments a and b.
+First import ``add_integer`` from ``0-add_integer`` module:
+
+      >>> add_integer = __import__('0-add_integer').add_integer
+
+Now use it:
+
+    >>> add_integer(2, 3)
+    5
+    >>> add_integer(-2, 3)
+    1
+
+with float values:
+
+     >>> add_integer(1.99, 3.564443)
+     4
+     >>> add_integer(-2, 3.564443)
+     1
+
+with strings it raises an error:
+
+     >>> add_integer('a', 2) #doctest: +ELLIPSIS
+     Traceback (most recent call last):
+     ...
+     TypeError: a must be an integer
+     >>> add_integer(2, 'a') #doctest: +ELLIPSIS
+     Traceback (most recent call last):
+     ...
+     TypeError: b must be an integer
