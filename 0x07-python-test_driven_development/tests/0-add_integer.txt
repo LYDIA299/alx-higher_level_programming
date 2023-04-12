@@ -15,6 +15,8 @@ Now use it:
     5
     >>> add_integer(-2, 3)
     1
+    >>> add_integer(-2, -1)
+    -3
 
 with float values:
 
@@ -22,6 +24,10 @@ with float values:
      4
      >>> add_integer(-2, 3.564443)
      1
+     >>> add_integer(-2.9, -0.2)
+     -2
+     >>> add_integer(2.3, -3.88)
+     -1
 
 with strings it raises an error:
 
