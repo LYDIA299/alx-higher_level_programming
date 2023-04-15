@@ -22,4 +22,4 @@ class Rectangle(BaseGeometry):
         """String magic function."""
         if self.__width and self.__height:
             return "[{}] {}/{}".format(str(self.__class__.__name__),
-                                           self.__width, self.__height)
+                                       self.__width, self.__height)
