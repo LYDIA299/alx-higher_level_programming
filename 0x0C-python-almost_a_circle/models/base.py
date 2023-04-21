@@ -7,6 +7,7 @@ class Base():
     """Base class for all other classes in this project."""
 
     __nb_objects = 0
+
     def __init__(self, id=None):
         """class constructor.
         @ id(int): id for objects.
