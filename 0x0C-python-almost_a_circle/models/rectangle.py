@@ -13,6 +13,16 @@ class Rectangle(Base):
         @ height: height of the rectangle.
         """
 
+        for el in [width, height, x, y]:
+            if type(el) != int:
+                raise TypeError(f"{el} must be an integer")
+        for el in [width, height]:
+            if el <= 0:
+                raise ValueError(f"{el} must be > 0")
+        for el in [x, y]:
+            if el < 0:
+                raise ValueError(f"{el} must be >=0")
+
         self.__width = width
         self.__height = height
         self.__x = x
