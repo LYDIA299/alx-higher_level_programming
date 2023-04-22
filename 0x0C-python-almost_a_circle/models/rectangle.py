@@ -96,8 +96,9 @@ class Rectangle(Base):
         for i in range(self.__y):
             print()
         for i in range(self.__height):
-            s = self.__x - 1
-            print(" " * s, '#' * self.__width)
+            for j in range(self.__x):
+                print(" ", end="")
+            print('#' * self.__width)
 
     def __str__(self):
         """Overrides str in the base class."""
