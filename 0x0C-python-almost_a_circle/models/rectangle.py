@@ -93,8 +93,11 @@ class Rectangle(Base):
 
     def display(self):
         """Prints in stdout the Rectangle with '#' character."""
+        for i in range(self.__y):
+            print()
         for i in range(self.__height):
-            print('#' * self.__width)
+            s = self.__x - 1
+            print(" " * s, '#' * self.__width)
 
     def __str__(self):
         """Overrides str in the base class."""
