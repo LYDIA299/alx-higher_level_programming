@@ -14,24 +14,24 @@ class Rectangle(Base):
         """
 
         if type(x) != int:
-            raise TypeError(f"{x} must be an integer")
+            raise TypeError("x must be an integer")
         if x < 0:
-            raise ValueError(f"{x} must be >= 0")
+            raise ValueError("x must be >= 0")
 
         if type(y) != int:
-            raise TypeError(f"{y} must be an integer")
+            raise TypeError("y must be an integer")
         if y < 0:
-            raise ValueError(f"{y} must be >= 0")
+            raise ValueError("y must be >= 0")
 
         if type(width) != int:
-            raise TypeError(f"{width} must be an integer")
+            raise TypeError("width must be an integer")
         if width <= 0:
-            raise ValueError(f"{width} must be > 0")
+            raise ValueError("width must be > 0")
 
         if type(height) != int:
-            raise TypeError(f"{height} must be an integer")
+            raise TypeError("height must be an integer")
         if height <= 0:
-            raise ValueError(f"{height} must be > 0")
+            raise ValueError("height must be > 0")
 
         self.__width = width
         self.__height = height
@@ -46,9 +46,9 @@ class Rectangle(Base):
     @width.setter
     def width(self, val):
         if type(width) != int:
-            raise TypeError(f"{width} must be an integer")
+            raise TypeError("width must be an integer")
         if width <= 0:
-            raise ValueError(f"{width} must be > 0")
+            raise ValueError("width must be > 0")
         self.__width = val
 
     @property
@@ -58,9 +58,9 @@ class Rectangle(Base):
     @height.setter
     def height(self, val):
         if type(height) != int:
-            raise TypeError(f"{height} must be an integer")
+            raise TypeError("height must be an integer")
         if height <= 0:
-            raise ValueError(f"{height} must be > 0")
+            raise ValueError("height must be > 0")
         self.__height = val
 
     @property
@@ -70,9 +70,9 @@ class Rectangle(Base):
     @x.setter
     def x(self, val):
         if type(x) != int:
-            raise TypeError(f"{x} must be an integer")
+            raise TypeError("x must be an integer")
         if x < 0:
-            raise ValueError(f"{x} must be >= 0")
+            raise ValueError("x must be >= 0")
         self.__x = val
 
     @property
@@ -82,7 +82,7 @@ class Rectangle(Base):
     @y.setter
     def y(self, val):
         if type(y) != int:
-            raise TypeError(f"{y} must be an integer")
+            raise TypeError("y must be an integer")
         if y < 0:
-            raise ValueError(f"{y} must be >= 0")
+            raise ValueError("y must be >= 0")
         self.__y = val
