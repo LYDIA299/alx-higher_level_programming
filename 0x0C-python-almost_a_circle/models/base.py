@@ -27,7 +27,7 @@ class Base():
         @ list_dictionaries: a list of dictionaries.
         """
 
-        if list_dictionaries is None or len(list_dictionaries) == 0:
+        if list_dictionaries is None or list_dictionaries == []:
             return "[]"
         else:
             json.dumps(list_dictionaries)
