@@ -1,8 +1,10 @@
 ## 0x0D. SQL - Introduction
 SQL Definition Basically, SQL stands for Structured Query Language which is
 basically a language used by databases.
+
 SQL statements are divided into two major categories:
-data definition language (DDL) and data manipulation language (DML).
+* Data Definition Language (DDL)
+* Data Manipulation Language (DML).
 
 **General**
 * What’s a database
