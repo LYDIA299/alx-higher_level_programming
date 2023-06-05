@@ -1,0 +1,7 @@
+-- lists all shows, and all genres linked to that show
+SELECT title, name
+FROM tv_shows
+LEFT OUTER JOIN (tv_show_genres INNER JOIN tv_genres
+     ON tv_show_genres.genre_id = tv_genres.id)
+ON tv_show_genres.show_id = tv_shows.id
+ORDER BY title ASC, name ASC;
