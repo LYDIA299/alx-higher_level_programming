@@ -1,9 +1,12 @@
-from  sqlalchemy import Column, Integer, String
+#!/usr/bin/python3
+
+""" State class an instance of the Base class """
+
+from sqlalchemy import Column, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
 
 Base = declarative_base()
 
-""" State class an instance of the Base class """
 
 class State(Base):
     """
