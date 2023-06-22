@@ -11,12 +11,12 @@ if __name__ == '__main__':
     engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.format(
         sys.argv[1], sys.argv[2], sys.argv[3]), pool_pre_ping=True)
     state_name = sys.argv[4]
-    state_name =state_name.split("' ")[0]
+    state_name = state_name.split("' ")[0]
 
     Session = sessionmaker(bind=engine)
     session = Session()
-    result = session.query(State).filter(State.name=='{}'.format(state_name)).\
-        first()
+    result = session.query(State).filter(State.name == '{}'.
+                                         format(state_name)).first()
 
     if result:
         print("{}".format(result.id))
