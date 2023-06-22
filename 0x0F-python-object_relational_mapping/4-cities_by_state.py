@@ -14,7 +14,8 @@ if __name__ == '__main__':
     conn = MySQLdb.connect(host="localhost", port=3306, user=username,
                            passwd=password, db=database, charset="utf8")
     cur = conn.cursor()
-    cur.execute("SELECT c.id, c.name, s.name FROM cities c INNER JOIN states s ON c.state_id = s.id ORDER BY id ASC")
+    cur.execute("SELECT c.id, c.name, s.name FROM cities c INNER JOIN states s \
+ON c.state_id = s.id ORDER BY id ASC")
     results = cur.fetchall()
     for row in results:
         print(row)

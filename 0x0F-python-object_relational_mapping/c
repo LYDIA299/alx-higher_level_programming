@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-"""lists all cities from the database"""
+"""takes in name of a state as an argument and lists all cities of that state"""
 
 if __name__ == '__main__':
 
@@ -10,12 +10,15 @@ if __name__ == '__main__':
     username = sys.argv[1]
     password = sys.argv[2]
     database = sys.argv[3]
+    state_name = sys.argv[4].split("'")[0]
 
     conn = MySQLdb.connect(host="localhost", port=3306, user=username,
                            passwd=password, db=database, charset="utf8")
     cur = conn.cursor()
-    cur.execute("SELECT c.id, c.name,
-s.name FROM cities c INNER JOIN states s ON c.state_id = s.id ORDER BY id ASC")
+    query = "SELECT c.name FROM cities c INNER JOIN states s \
+ON c.state_id = s.id _id = (SELECT id FROM states \
+WHERE name = '{}') ORDER BY c.id ASC".format(state_name)
+    cur.execute(query)
     results = cur.fetchall()
     for row in results:
         print(row)
