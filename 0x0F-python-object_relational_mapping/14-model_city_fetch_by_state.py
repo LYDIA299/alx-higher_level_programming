@@ -1,9 +1,10 @@
 #!/usr/bin/python3
 
-""" changes the name of a State object from the database """
+""" prints all City objects from the database """
 
 import sys
-from model_state import Base, State
+from model_state import State
+from model_city import City
 from sqlalchemy import (create_engine)
 from sqlalchemy.orm import sessionmaker
 
@@ -14,9 +15,9 @@ if __name__ == '__main__':
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    result = session.query(State).filter(State.id == 2).first()
+    results = session.query(City, State).filter(City.state_id ==State.id).\
+        order_by(State.id).all()
 
-    if result:
-        result.name = New Mexico
-        session.commit()
+    for city, state in results:
+        print("{}: ({}) {}".format(state.name, city.id, city.name))
     session.close()
