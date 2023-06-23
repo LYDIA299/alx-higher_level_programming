@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-"""  adds the State object “Louisiana” to the database """
+""" changes the name of a State object from the database """
 
 import sys
 from model_state import Base, State
@@ -14,12 +14,9 @@ if __name__ == '__main__':
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    newState = State(name='Louisiana')
-    session.add(newState)
-    session.commit()
-
-    result = session.query(State).filter(State.name == 'Louisiana').first()
+    result = session.query(State).filter(State.id == 2).first()
 
     if result:
-        print("{}".format(result.id))
+        result.name = New Mexico
+        session.commit()
     session.close()
