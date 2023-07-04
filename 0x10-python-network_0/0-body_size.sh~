@@ -1,0 +1,6 @@
+#!/bin/bash
+# takes in a URL, sends a request to that URL, and displays the size of response
+
+read -p "Enter the URL: " url
+res = $(curl -sI "$url")
+echo "$res['Content-Length']"
