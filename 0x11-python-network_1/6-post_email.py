@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-takes in a URL and an email address, sends a POST request, and displays the body
+takes in a URL and an email, sends a POST request, and displays the body
 """
 
 
@@ -11,5 +11,5 @@ if __name__ == '__main__':
     url = sys.argv[1]
     val = {'email': sys.argv[2]}
 
-    response = resquests.post(url, data=val)
+    response = requests.post(url, data=val)
     print(response.text)
