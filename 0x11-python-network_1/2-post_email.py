@@ -7,7 +7,7 @@ if __name__ == '__main__':
     import urllib.parse
 
     url = sys.argv[1]
-    val = {'email' : sys.argv[2]}
+    val = {'email': sys.argv[2]}
     data = urllib.parse.urlencode(val)
     data = data.encode('ascii')
 
