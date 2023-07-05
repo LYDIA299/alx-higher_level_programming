@@ -10,7 +10,7 @@ if __name__ == '__main__':
     import urllib.error
 
     url = sys.argv[1]
-    req = urllib.request.Requst('{}'.format(url))
+    req = urllib.request.Request(url)
 
     try:
         with urllib.request.urlopen(req) as response:
